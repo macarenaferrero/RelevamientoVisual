@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <app-menu>
+
+  </app-menu>
+  <div class="ion-padding">
+    <ion-card style="background-color:#dbe7da; border-color: black; border-radius: 3px; border-color: black;">
+      <ion-card-header class="text-center">
+        Gráfico Imágenes Feas
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+    <br>
+    <div class="text-center">
+
+      <img src="{{selectedNiceImage}}" />
+    </div>
+
+  </div>
+
+</ion-content>

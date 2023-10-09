@@ -1,0 +1,69 @@
+<app-menu>
+
+</app-menu>
+<ion-content>
+  <h1>Imágenes Lindas</h1>
+  <div class="container pt-5 pl-10">
+    <div class="col">
+      <div *ngFor="let item of fotosLindasAMostrar">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{item.usuarioEmail}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="{{item.imagen}}">
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{item.fecha}}
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              Votos: {{item.votos}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <div *ngIf="!Contiene(item.usuariosQueVotaron)">
+            <ion-button color="danger" expand="block"
+              (click)="UpdateLinda(item.id, item.votos, item.usuariosQueVotaron)">
+              <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+            </ion-button>
+          </div>
+          <div *ngIf="Contiene(item.usuariosQueVotaron)">
+            <ion-button color="primary" expand="block"
+              (click)="UpdateLinda(item.id, item.votos, item.usuariosQueVotaron)">
+              <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-card>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-body text-center">
+    <button type="button" class="btn btn-primary btn-circle btn-xl" (click)="addPhotoToGallery()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-camera"
+        viewBox="0 0 16 16">
+        <path
+          d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
+        <path
+          d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="text-center" *ngIf="misFotosASubir !== undefined && misFotosASubir.length > 0">
+    <h2> Mis fotos a subir </h2>
+    <div class="col">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let foto of misFotosASubir; index as position">
+        <ion-card>
+          <ion-card-content>
+            <img src="{{foto}}">
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <ion-button expand="full" (click)="guardarFotos()">Subir Fotos</ion-button>
+  </div>
+</ion-content>

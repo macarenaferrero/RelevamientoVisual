@@ -1,0 +1,28 @@
+<ion-accordion-group>
+  <ion-accordion value="menu">
+    <ion-item slot="header">
+      <ion-label  class="text-center">Menu</ion-label>
+    </ion-item>
+    <ion-list slot="content">
+
+    <ion-item (click)="cosasLindas()">
+      <ion-label class="text-center" >Imágenes lindas</ion-label>
+    </ion-item>
+    <ion-item (click)="cosasFeas()">
+      <ion-label  class="text-center">Imágenes feas</ion-label>
+    </ion-item>
+    <ion-item (click)="misFotos()">
+      <ion-label  class="text-center">Mis imágenes</ion-label>
+    </ion-item>
+    <ion-item (click)="graficoLindas()">
+      <ion-label  class="text-center">Gráfico Imágenes Lindas</ion-label>
+    </ion-item>
+    <ion-item (click)="graficoFeas()">
+      <ion-label  class="text-center">Gráfico Imágenes Feas</ion-label>
+    </ion-item>
+      <ion-item color="light" (click)="logOut()">
+        <ion-label  class="text-center">Salir</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+</ion-accordion-group>

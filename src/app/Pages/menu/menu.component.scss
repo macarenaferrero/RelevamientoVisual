@@ -1,0 +1,30 @@
+ion-accordion-group{
+  background-color: aquamarine;
+}
+
+:root {
+	--ion-color-violet: #C75BB4;
+	--ion-color-violet-rgb: 199,91,180;
+	--ion-color-violet-contrast: #000000;
+	--ion-color-violet-contrast-rgb: 0,0,0;
+	--ion-color-violet-shade: #af509e;
+	--ion-color-violet-tint: #cd6bbc;
+}
+
+.ion-color-violet {
+	--ion-color-base: var(--ion-color-violet);
+	--ion-color-base-rgb: var(--ion-color-violet-rgb);
+	--ion-color-contrast: var(--ion-color-violet-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-violet-contrast-rgb);
+	--ion-color-shade: var(--ion-color-violet-shade);
+	--ion-color-tint: var(--ion-color-violet-tint);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+
+h1, h2, ion-label{
+  font-family: 'Handjet', cursive;
+  color: white;
+  text-align: center;
+}

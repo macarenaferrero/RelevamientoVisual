@@ -1,0 +1,21 @@
+.img-loaded + ion-spinner {
+  display:none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+
+h1, h2{
+  font-family: 'Handjet', cursive;
+  color: white;
+  text-align: center;
+}
+
+
+ion-content{
+  background-image: url('../../../assets/background/1.png');
+}
+
+
+ion-content{
+  --background: none;
+}

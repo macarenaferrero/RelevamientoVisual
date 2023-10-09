@@ -1,0 +1,38 @@
+<app-menu>
+
+</app-menu>
+<ion-content>
+
+<div >
+  <div class="text-center" >
+    <h1 style="font-size: 30px;">Imágenes Lindas</h1>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let foto of misFotosLindas; index as position">
+        <img src="{{foto.imagen}}"/>
+        <ion-text color="dark">
+          <h5 style="color:rgb(255, 255, 255); font-size:15px; text-align: center;">Votos: {{foto.votos}} Fecha: {{foto.fecha}}</h5>
+        </ion-text>
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+  <div class="text-center" >
+    <h1 style="font-size: 30px;">Imágenes Feas</h1>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let foto of misFotosFeas; index as position">
+        <img src="{{foto.imagen}}" />
+        <ion-text color="dark">
+          <h5 style="color:rgb(255, 255, 255); font-size:15px; text-align: center;">Votos: {{foto.votos}} Fecha: {{foto.fecha}}</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+</ion-content>
