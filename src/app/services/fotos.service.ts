@@ -118,30 +118,31 @@ export class FotosService {
     let dateURL; // Declarar las variables fuera de los bloques if
     let dateURLToday;
     try {
+      debugger;
       const res = await listAll(imgRef);
       for (let i = res.items.length - 1; i >= 0; i--) {
         const url = res.items[i];
         const urlAsString = await getDownloadURL(url);
-        const urlDateTimeString = urlAsString.match(/\d{13}/)??"";
+        const urlDateTimeString = urlAsString.match(/\d{14}/)??"";
         const currentDateTime = new Date().toLocaleString().replace(/[\s/:,]/g, '');
 
 
           const matchedString = urlDateTimeString[0];
-          const day = parseInt(matchedString.substring(0, 1), 10); // Extraer el primer carácter
-          const month = parseInt(matchedString.substring(1, 3), 10) - 1; // Los meses en JavaScript son de 0 a 11
-          const year = parseInt(matchedString.substring(3, 7), 10);
-          const hours = parseInt(matchedString.substring(7, 9), 10);
-          const minutes = parseInt(matchedString.substring(9, 11), 10);
-          const seconds = parseInt(matchedString.substring(11, 13), 10);
+          const day = parseInt(matchedString.substring(0, 2), 10); // Extraer el primer carácter
+          const month = parseInt(matchedString.substring(2, 4), 10) - 1; // Los meses en JavaScript son de 0 a 11
+          const year = parseInt(matchedString.substring(4, 8), 10);
+          const hours = parseInt(matchedString.substring(8, 10), 10);
+          const minutes = parseInt(matchedString.substring(10, 12), 10);
+          const seconds = parseInt(matchedString.substring(12, 14), 10);
           dateURL = new Date(year, month, day, hours, minutes, seconds);
 
 
-          const dayToday = parseInt(currentDateTime.substring(0, 1), 10); // Extraer el primer carácter
-          const monthToday = parseInt(currentDateTime.substring(1, 3), 10) - 1; // Los meses en JavaScript son de 0 a 11
-          const yearToday = parseInt(currentDateTime.substring(3, 7), 10);
-          const hoursToday = parseInt(currentDateTime.substring(7, 9), 10);
-          const minutesToday = parseInt(currentDateTime.substring(9, 11), 10);
-          const secondsToday = parseInt(currentDateTime.substring(11, 13), 10);
+          const dayToday = parseInt(currentDateTime.substring(0, 2), 10); // Extraer el primer carácter
+          const monthToday = parseInt(currentDateTime.substring(2, 4), 10) - 1; // Los meses en JavaScript son de 0 a 11
+          const yearToday = parseInt(currentDateTime.substring(4, 8), 10);
+          const hoursToday = parseInt(currentDateTime.substring(8, 10), 10);
+          const minutesToday = parseInt(currentDateTime.substring(10, 12), 10);
+          const secondsToday = parseInt(currentDateTime.substring(12, 14), 10);
           dateURLToday = new Date(yearToday, monthToday, dayToday, hoursToday, minutesToday, secondsToday);
 
 

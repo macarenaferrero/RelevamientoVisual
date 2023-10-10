@@ -26,12 +26,9 @@ import { Router } from '@angular/router';
 })
 export class SplashComponent  implements OnInit {
 
-  constructor(public router:Router) {
-
-   }
+  constructor(public router:Router) {}
 
   ngOnInit() {
-    // SplashScreen.hide();
     setTimeout(()=>{
       this.router.navigateByUrl('inicio')
     },3000)
